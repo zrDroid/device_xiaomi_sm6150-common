@@ -60,6 +60,7 @@ public class DozeService extends Service {
             Log.d(TAG, "Destroying service");
         super.onDestroy();
         this.unregisterReceiver(mScreenStateReceiver);
+        mAodSensor.disable();
         mProximitySensor.disable();
         mPickupSensor.disable();
     }
